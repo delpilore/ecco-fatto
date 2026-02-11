@@ -3,89 +3,126 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Annuncio • Casa da sogno</title>
+  <title>Ricetta • (non) solo cucina</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="wrap">
-    <!-- Vista 1: finto sito immobiliare -->
-    <section id="listingView" class="card view view--active" aria-labelledby="listingTitle">
+
+    <!-- Vista 1: finta pagina ricetta -->
+    <section id="recipeView" class="card view view--active" aria-labelledby="recipeTitle">
+
       <header class="card__header">
         <div>
-          <h1 id="listingTitle">Casa da sogno • Vista tramonto</h1>
-          <p class="muted">Rif. #VLNT-0214 • Disponibile subito</p>
+          <h1 id="recipeTitle">Ricetta: “Ricina Morosi”</h1>
+          <p class="muted">Tempo: 14 min • Porzioni: 2 • Difficoltà: facile (se ci sei tu)</p>
         </div>
-        <span class="badge">In evidenza</span>
+        <span class="badge">Preferita ⭐</span>
       </header>
 
-      <button class="hero" id="heroBtn" aria-label="Apri dettagli">
-        <img src="./assets/house.jpg" alt="Foto della casa" />
-        <span class="hero__hint">Clicca per i dettagli</span>
+      <button class="hero" id="heroBtn" aria-label="Apri dettagli (spoiler)">
+        <img src="./assets/recipe.jpg" alt="Foto della ricetta" />
+        <span class="hero__hint">Clicca per “continuare”</span>
       </button>
 
       <div class="grid">
         <div class="stat">
-          <div class="stat__k">Prezzo</div>
-          <div class="stat__v">€ 214.000</div>
+          <div class="stat__k">Occasione</div>
+          <div class="stat__v">San Valentino</div>
         </div>
         <div class="stat">
-          <div class="stat__k">Superficie</div>
-          <div class="stat__v">52 m²</div>
+          <div class="stat__k">Ingrediente segreto</div>
+          <div class="stat__v">un sorriso</div>
         </div>
         <div class="stat">
-          <div class="stat__k">Locali</div>
-          <div class="stat__v">2 + cucina</div>
+          <div class="stat__k">Tecnica</div>
+          <div class="stat__v">“a sentimento”</div>
         </div>
         <div class="stat">
-          <div class="stat__k">Plus</div>
-          <div class="stat__v">❤️ in omaggio</div>
+          <div class="stat__k">Nota</div>
+          <div class="stat__v">⚠️ leggere fino in fondo</div>
         </div>
+      </div>
+
+      <div class="twoCol">
+        <section class="panel" aria-label="Ingredienti">
+          <h2 class="panel__title">Ingredienti</h2>
+          <ul class="list">
+            <li>2 cucchiai di pazienza</li>
+            <li>1 manciata di risate (quelle nostre)</li>
+            <li>Una spolverata di “quella cosa che solo noi sappiamo”</li>
+            <li>Q.B. di <em>“ricina morosi”</em> (non chiedere: fidati)</li>
+            <li class="odd">⚡ Aggiungere “il segnale” quando serve (ti ricordi 😌)</li>
+          </ul>
+          <p class="muted small">
+            *Sostituzioni: nessuna. Questa ricetta funziona solo con te.
+          </p>
+        </section>
+
+        <section class="panel" aria-label="Procedimento">
+          <h2 class="panel__title">Procedimento</h2>
+          <ol class="list">
+            <li>Preriscalda il cuore a temperatura “noi”.</li>
+            <li>Mescola bene: quotidianità + un pizzico di sorpresa.</li>
+            <li class="odd">Se trovi una frase che “ston(a)”, non è un errore: è un indizio.</li>
+            <li>A metà cottura, assaggia e pensa a un posto che ti fa dire “wow”.</li>
+            <li>Servi in due, con vista (da definire) e zero fretta.</li>
+          </ol>
+
+          <div class="note">
+            <strong>Nota dello chef:</strong>
+            se stai leggendo davvero, sei già nella parte migliore. 💘
+          </div>
+        </section>
       </div>
 
       <p class="desc">
-        Accogliente, luminosa, perfetta per una serata speciale. Quartiere tranquillo,
-        atmosfera romantica, dettagli curati. (Attenzione: potrebbe cambiare la tua serata 😉)
+        Questa pagina sembra una ricetta normale, vero? Ogni tanto però scappa qualche
+        dettaglio “strano” (tipo <span class="odd">14 min</span>, o quella parola lì…).
+        Non preoccuparti: è tutto voluto. 🙂
       </p>
 
       <div class="actions">
-        <button class="btn btn--primary" id="revealBtn">Richiedi info</button>
-        <button class="btn" id="fakeBtn" type="button">Salva annuncio</button>
+        <button class="btn btn--primary" id="revealBtn">Stampa ricetta</button>
+        <button class="btn" id="fakeBtn" type="button">Salva nei preferiti</button>
       </div>
 
       <footer class="foot muted">
-        © Agenzia “Cuori & Mattoni” • Tutti i diritti… del tuo sorriso
+        © Ricettario “Segreti & Cucchiai” • (clicca ovunque per continuare)
       </footer>
     </section>
 
-    <!-- Vista 2: reveal San Valentino -->
+    <!-- Vista 2: invito vero e proprio -->
     <section id="inviteView" class="card view" aria-labelledby="inviteTitle">
       <header class="card__header">
         <div>
-          <h1 id="inviteTitle">Plot twist 💘</h1>
-          <p class="muted">Questo annuncio non vende case…</p>
+          <h1 id="inviteTitle">Ok, basta fingere 😄💘</h1>
+          <p class="muted">Questa era solo la copertura.</p>
         </div>
-        <span class="badge badge--love">San Valentino</span>
+        <span class="badge badge--love">14 Feb</span>
       </header>
 
       <div class="invite">
-        <h2>Vuoi uscire a cena con me il 14? 🍝✨</h2>
+        <h2>Vuoi fare una giornata ad Alberio di Mugello (la Flufflet)? ✨</h2>
         <p class="invite__p">
-          Ho una proposta: <strong>una cena fuori insieme</strong>.
-          Niente stress, solo noi due e una serata bella.
+          Ti va di prenderci <strong>una giornata tutta nostra</strong>:
+          un po’ di relax, un po’ di cose belle… e poi <strong>cena con vista</strong>
+          in <span class="odd">[inserisci qui il posto specifico]</span>.
         </p>
 
         <div class="invite__cta">
           <button class="btn btn--primary" id="yesBtn">Sì 💘</button>
-          <button class="btn" id="maybeBtn">Ne parliamo 😉</button>
+          <button class="btn" id="maybeBtn">Dimmi i dettagli 😉</button>
         </div>
 
         <output id="result" class="result"></output>
       </div>
 
       <footer class="foot muted">
-        P.S. Se hai cliccato fin qui, sei ufficialmente la mia “casa preferita”. 🏡❤️
+        P.S. Se hai cliccato fin qui, la ricetta ha funzionato. 🥂❤️
       </footer>
     </section>
+
   </main>
 
   <div id="confetti" class="confetti" aria-hidden="true"></div>

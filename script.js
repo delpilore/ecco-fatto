@@ -1,5 +1,5 @@
-const listingView = document.getElementById("listingView");
-const inviteView   = document.getElementById("inviteView");
+const recipeView = document.getElementById("recipeView");
+const inviteView = document.getElementById("inviteView");
 
 const revealBtn = document.getElementById("revealBtn");
 const heroBtn   = document.getElementById("heroBtn");
@@ -11,12 +11,16 @@ const result   = document.getElementById("result");
 
 const confetti = document.getElementById("confetti");
 
+let revealed = false;
+
 function swapViews() {
-  listingView.classList.remove("view--active");
-  // piccolo delay per far vedere la transizione
+  if (revealed) return;
+  revealed = true;
+
+  recipeView.classList.remove("view--active");
   setTimeout(() => {
     inviteView.classList.add("view--active");
-    burstHearts(26);
+    burstHearts(28);
   }, 80);
 }
 
@@ -27,9 +31,7 @@ function burstHearts(n = 20) {
     s.textContent = symbols[Math.floor(Math.random() * symbols.length)];
     s.style.left = Math.random() * 100 + "vw";
     s.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
-    s.style.transform = `translateY(0) rotate(${Math.random()*180}deg)`;
     confetti.appendChild(s);
-
     setTimeout(() => s.remove(), 6000);
   }
 }
@@ -38,23 +40,31 @@ function setMessage(text) {
   result.textContent = text;
 }
 
-revealBtn.addEventListener("click", swapViews);
-heroBtn.addEventListener("click", swapViews);
+// Trigger espliciti
+revealBtn.addEventListener("click", (e) => { e.stopPropagation(); swapViews(); });
+heroBtn.addEventListener("click",  (e) => { e.stopPropagation(); swapViews(); });
 
-fakeBtn.addEventListener("click", () => {
-  // easter egg carino: “salva” ma con allusione
-  setMessage("Annuncio salvato. (Ok… ora clicca ‘Richiedi info’ 😄)");
-  // feedback veloce senza reveal
-  burstHearts(8);
-  setTimeout(() => (result.textContent = ""), 2500);
+// “Clicca ovunque” nella prima vista (ma non farlo scattare quando premi i bottoni)
+recipeView.addEventListener("click", (e) => {
+  const tag = (e.target?.tagName || "").toLowerCase();
+  if (tag === "button" || tag === "a") return;
+  swapViews();
 });
 
+// Easter egg “salva”
+fakeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  // Messaggino breve senza rivelare per forza (ma puoi decidere di rivelare anche qui)
+  burstHearts(10);
+});
+
+// Risposte nell’invito
 yesBtn.addEventListener("click", () => {
-  setMessage("Yesss! 💖 Allora è un appuntamento. Ti scrivo i dettagli e ci vestiamo belli.");
-  burstHearts(40);
+  setMessage("Sììì! 💖 Allora è deciso: giornata ad Alberio di Mugello (la Flufflet) + cena con vista.");
+  burstHearts(42);
 });
 
 maybeBtn.addEventListener("click", () => {
-  setMessage("Va benissimo 😉 Mi basta stare con te. Decidiamo insieme dove andare.");
-  burstHearts(22);
+  setMessage("Perfetto 😉 Ti mando i dettagli e scegliamo insieme il posto ‘con vista’.");
+  burstHearts(26);
 });
