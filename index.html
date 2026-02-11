@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Annuncio • Casa da sogno</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <!-- Vista 1: finto sito immobiliare -->
+    <section id="listingView" class="card view view--active" aria-labelledby="listingTitle">
+      <header class="card__header">
+        <div>
+          <h1 id="listingTitle">Casa da sogno • Vista tramonto</h1>
+          <p class="muted">Rif. #VLNT-0214 • Disponibile subito</p>
+        </div>
+        <span class="badge">In evidenza</span>
+      </header>
+
+      <button class="hero" id="heroBtn" aria-label="Apri dettagli">
+        <img src="./assets/house.jpg" alt="Foto della casa" />
+        <span class="hero__hint">Clicca per i dettagli</span>
+      </button>
+
+      <div class="grid">
+        <div class="stat">
+          <div class="stat__k">Prezzo</div>
+          <div class="stat__v">€ 214.000</div>
+        </div>
+        <div class="stat">
+          <div class="stat__k">Superficie</div>
+          <div class="stat__v">52 m²</div>
+        </div>
+        <div class="stat">
+          <div class="stat__k">Locali</div>
+          <div class="stat__v">2 + cucina</div>
+        </div>
+        <div class="stat">
+          <div class="stat__k">Plus</div>
+          <div class="stat__v">❤️ in omaggio</div>
+        </div>
+      </div>
+
+      <p class="desc">
+        Accogliente, luminosa, perfetta per una serata speciale. Quartiere tranquillo,
+        atmosfera romantica, dettagli curati. (Attenzione: potrebbe cambiare la tua serata 😉)
+      </p>
+
+      <div class="actions">
+        <button class="btn btn--primary" id="revealBtn">Richiedi info</button>
+        <button class="btn" id="fakeBtn" type="button">Salva annuncio</button>
+      </div>
+
+      <footer class="foot muted">
+        © Agenzia “Cuori & Mattoni” • Tutti i diritti… del tuo sorriso
+      </footer>
+    </section>
+
+    <!-- Vista 2: reveal San Valentino -->
+    <section id="inviteView" class="card view" aria-labelledby="inviteTitle">
+      <header class="card__header">
+        <div>
+          <h1 id="inviteTitle">Plot twist 💘</h1>
+          <p class="muted">Questo annuncio non vende case…</p>
+        </div>
+        <span class="badge badge--love">San Valentino</span>
+      </header>
+
+      <div class="invite">
+        <h2>Vuoi uscire a cena con me il 14? 🍝✨</h2>
+        <p class="invite__p">
+          Ho una proposta: <strong>una cena fuori insieme</strong>.
+          Niente stress, solo noi due e una serata bella.
+        </p>
+
+        <div class="invite__cta">
+          <button class="btn btn--primary" id="yesBtn">Sì 💘</button>
+          <button class="btn" id="maybeBtn">Ne parliamo 😉</button>
+        </div>
+
+        <output id="result" class="result"></output>
+      </div>
+
+      <footer class="foot muted">
+        P.S. Se hai cliccato fin qui, sei ufficialmente la mia “casa preferita”. 🏡❤️
+      </footer>
+    </section>
+  </main>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
