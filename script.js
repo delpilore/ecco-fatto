@@ -60,11 +60,11 @@ fakeBtn.addEventListener("click", (e) => {
 
 // Risposte nell’invito
 yesBtn.addEventListener("click", () => {
-  setMessage("Sììì! 💖 Allora è deciso: giornata ad Alberio di Mugello (la Flufflet) + cena con vista.");
+  setMessage("Non vedo l'ora :)");
   burstHearts(42);
 });
 
 maybeBtn.addEventListener("click", () => {
-  setMessage("Perfetto 😉 Ti mando i dettagli e scegliamo insieme il posto ‘con vista’.");
+  setMessage("UFFI PUFFI :)");
   burstHearts(26);
 });
